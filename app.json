@@ -45,12 +45,12 @@
       },
       "STRING_SESSION": {
          "description": "Telegram String Session",
-         "required": true,
+         "required": false,
          "value": ""
       },
       "MONGO_DB_URI": {
          "description": "MongoDB Url get from mongodb",
-         "required": true,
+         "required": false,
          "value": ""
       },      
       "BOT_ID": {
@@ -66,7 +66,7 @@
       "UPSTREAM_REPO_URL": {
          "description": "Required for Update module",
          "required": true,
-         "value": "https://github.com/Amarnathcdj/Rylee"
+         "value": "https://github.com/Amarnathcjd/Cerina"
       }
    },
    "keywords": [
