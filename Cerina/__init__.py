@@ -2,10 +2,16 @@ import logging, os, sys, time
 from logging import basicConfig, INFO, getLogger
 from telethon import TelegramClient
 StartTime = time.time()
+import Rylee.modules.sql.elevated_sql as sql
 
 CMD_LIST = {}
 CMD_HELP = {}
 LOAD_PLUG = {}
+SUDO_USERS = []
+
+Elevated = sql.SUDO_USERS
+for x in Elevated:
+  SUDO_USERS.append(x)
 
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO
