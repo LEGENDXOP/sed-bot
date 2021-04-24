@@ -1,4 +1,8 @@
-telethon
+telethon>=1.21.1
+sqlalchemy==1.3.23
+psycopg2-binary
 pymongo
 dnspython
 pytz
+gitpython
+
