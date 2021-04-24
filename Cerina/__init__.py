@@ -1,6 +1,7 @@
 import logging, os, sys, time
 from logging import basicConfig, INFO, getLogger
 from telethon import TelegramClient
+from telethon.sessions import StringSession
 StartTime = time.time()
 import Cerina.modules.sql.elevated_sql as sql
 
@@ -8,10 +9,6 @@ CMD_LIST = {}
 CMD_HELP = {}
 LOAD_PLUG = {}
 SUDO_USERS = []
-
-Elevated = sql.SUDO_USERS
-for x in Elevated:
-  SUDO_USERS.append(x)
 
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO
@@ -47,5 +44,17 @@ if ENV:
     MONGO_DB_URI = os.environ.get("MONGO_DB_URI", None)
     UPSTREAM_REPO_URL = os.environ.get("UPSTREAM_REPO_URL", None)
     BOT_ID = int(os.environ.get("BOT_ID", None))    
+    if STRING_SESSION:
+        ubot = TelegramClient(StringSession(STRING_SESSION), API_KEY, API_HASH)
+    else:
+        sys.exit(1)
+    try:
+        ubot.start()
+    except BaseException:
+        print("Invalid STRING SESSION!")
+        sys.exit(1)
+    Elevated = sql.SUDO_USERS
+    for x in Elevated:
+      SUDO_USERS.append(x)
 else:
     sys.exit(1)
