@@ -2,7 +2,7 @@ import logging, os, sys, time
 from logging import basicConfig, INFO, getLogger
 from telethon import TelegramClient
 StartTime = time.time()
-import Rylee.modules.sql.elevated_sql as sql
+import Cerina.modules.sql.elevated_sql as sql
 
 CMD_LIST = {}
 CMD_HELP = {}
