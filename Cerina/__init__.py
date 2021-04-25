@@ -3,12 +3,10 @@ from logging import basicConfig, INFO, getLogger
 from telethon import TelegramClient
 from telethon.sessions import StringSession
 StartTime = time.time()
-import Cerina.modules.sql.elevated_sql as sql
 
 CMD_LIST = {}
 CMD_HELP = {}
 LOAD_PLUG = {}
-SUDO_USERS = []
 
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO
