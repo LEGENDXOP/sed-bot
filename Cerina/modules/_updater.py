@@ -122,7 +122,7 @@ async def ud(ups):
             repo.git.reset("--hard", "FETCH_HEAD")
     reqs_upgrade = await updateme_requirements()
     await lol.edit("`Successfully Updated!\n" "restarting......`")
-    args = [sys.executable, "-m", "Rylee"]
+    args = [sys.executable, "-m", "Cerina"]
     execle(sys.executable, *args, environ)
     return
 
