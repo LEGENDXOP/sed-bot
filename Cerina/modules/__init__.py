@@ -1,7 +1,15 @@
 from Cerina import tbot, MONGO_DB_URI
 from telethon import functions, types
 from pymongo import MongoClient
+import Cerina.modules.sql.elevated_sql as sql
 
+#Setup SUDO
+SUDO_USERS = []
+Elevated = sql.SUDO_USERS
+for x in Elevated:
+    SUDO_USERS.append(x)
+
+#mongodb
 client = MongoClient(MONGO_DB_URI)
 db = client["Cerina"]
 
