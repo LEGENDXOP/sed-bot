@@ -1,5 +1,5 @@
 from Cerina import tbot, OWNER_ID, BOT_ID
-from Cerina.modules.sql.elevated_sql *
+from Cerina.modules.sql.elevated_sql import *
 from Cerina.events import register
 from . import get_user,SUDO_USERS
 import subprocess, io, sys, os, asyncio, traceback
