@@ -1,5 +1,5 @@
 from Cerina import tbot, OWNER_ID, BOT_ID
-import Cerina.modules.sql.elevated_sql as sql
+from Cerina.modules.sql.elevated_sql *
 from Cerina.events import register
 from . import get_user,SUDO_USERS
 import subprocess, io, sys, os, asyncio, traceback
@@ -19,11 +19,11 @@ async def ss(event):
    fname = "User"
  if user_id == OWNER_ID or user_id == BOT_ID:
    return
- if sql.is_sudo(user_id):
+ if is_sudo(user_id):
       await event.reply("This is already a Pro Sudo!")
       return
  await event.reply(f"Sucessfully set the Disaster level of this user to **Sudo User**.")
- sql.set_sudo(user_id, fname)
+ set_sudo(user_id, fname)
  SUDO_USERS.append(user_id)
 
 @tbot.on(events.NewMessage(pattern="^[!/?.]remsudo ?(.*)"))
@@ -39,8 +39,8 @@ async def ss(event):
    fname = "User"
  if user_id == OWNER_ID or user_id == BOT_ID:
    return
- if sql.is_sudo(user_id):
-         sql.rm_sudo(user_id)
+ if is_sudo(user_id):
+         rm_sudo(user_id)
          await event.reply(f"Removed From **Sudo Users**.")
          SUDO_USERS.remove(user_id)
          return
