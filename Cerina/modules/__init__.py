@@ -93,7 +93,7 @@ def gen_captcha(captcha_string_size=10):
 
 def gen_img_captcha(captcha_string_size=10):
  image_captcha = ImageCaptcha(width = 400, height = 270)
- text = get_captcha(captcha_string_size)
+ text = gen_captcha(captcha_string_size)
  image_file = "./"+ "captcha.png"
  image_captcha.write(text, image_file)
  
