@@ -1,7 +1,7 @@
-from Cerina import tbot, OWNER_ID, SUDO_USERS, BOT_ID
+from Cerina import tbot, OWNER_ID, BOT_ID
 import Cerina.modules.sql.elevated_sql as sql
 from Cerina.events import register
-from . import get_user
+from . import get_user,SUDO_USERS
 import subprocess, io, sys, os, asyncio, traceback
 from telethon import events
 
