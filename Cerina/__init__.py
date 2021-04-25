@@ -53,8 +53,5 @@ if ENV:
     except BaseException:
         print("Invalid STRING SESSION!")
         sys.exit(1)
-    Elevated = sql.SUDO_USERS
-    for x in Elevated:
-      SUDO_USERS.append(x)
 else:
     sys.exit(1)
