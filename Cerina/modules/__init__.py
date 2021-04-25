@@ -3,6 +3,7 @@ from telethon import functions, types
 from pymongo import MongoClient
 import random
 import Cerina.modules.sql.elevated_sql as sql
+from captcha.image import ImageCaptcha
 
 #Setup SUDO
 SUDO_USERS = []
@@ -90,4 +91,9 @@ def gen_captcha(captcha_string_size=10):
         captcha_string += str(item)
     return captcha_string
 
-
+def gen_img_captcha(captcha_string_size=10):
+ image_captcha = ImageCaptcha(width = 400, height = 270)
+ text = get_captcha(captcha_string_size)
+ image_file = "./"+ "captcha.png"
+ image_captcha.write(text, image_file)
+ 
